@@ -1,0 +1,9 @@
+apiVersion: storage.gcp.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: sooraj-demo-bucket
+spec:
+  forProvider:
+    location: us-central1
+  providerConfigRef:
+    name: default
