@@ -9,12 +9,11 @@ spec:
   forProvider:
     machineType: e2-micro
     zone: us-central1-a
-
-    deletionProtection: false   # ← REQUIRED
+    deletionProtection: false
 
     bootDisk:
       - initializeParams:
-          image: debian-cloud/debian-12
+          - image: debian-cloud/debian-12
 
     networkInterface:
       - subnetworkRef:
