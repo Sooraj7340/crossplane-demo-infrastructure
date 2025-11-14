@@ -5,19 +5,18 @@ metadata:
 spec:
   providerConfigRef:
     name: default
+
   forProvider:
-    machineType: e2-medium
+    machineType: e2-micro
     zone: us-central1-a
     bootDisk:
-      initializeParams:
-        image: debian-cloud/debian-11
-    metadata:
-      startupScript: |
-        #!/bin/bash
-        apt update -y
-        apt install nginx -y
+      - initializeParams:
+          image: debian-cloud/debian-12
+
     networkInterface:
       - subnetworkRef:
           name: sooraj-subnet-1
-        accessConfig:
-          - {}
+
+    tags:
+      - web
+      - demo
