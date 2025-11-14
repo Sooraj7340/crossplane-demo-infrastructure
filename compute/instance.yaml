@@ -1,0 +1,23 @@
+apiVersion: compute.gcp.upbound.io/v1beta1
+kind: Instance
+metadata:
+  name: sooraj-vm-1
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    machineType: e2-medium
+    zone: us-central1-a
+    bootDisk:
+      initializeParams:
+        image: debian-cloud/debian-11
+    metadata:
+      startupScript: |
+        #!/bin/bash
+        apt update -y
+        apt install nginx -y
+    networkInterface:
+      - subnetworkRef:
+          name: sooraj-subnet-1
+        accessConfig:
+          - {}

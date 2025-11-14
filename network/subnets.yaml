@@ -1,0 +1,25 @@
+apiVersion: compute.gcp.upbound.io/v1beta1
+kind: Subnetwork
+metadata:
+  name: sooraj-subnet-1
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    ipCidrRange: 10.10.1.0/24
+    region: us-central1
+    networkRef:
+      name: sooraj-demo-vpc
+---
+apiVersion: compute.gcp.upbound.io/v1beta1
+kind: Subnetwork
+metadata:
+  name: sooraj-subnet-2
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    ipCidrRange: 10.10.2.0/24
+    region: us-central1
+    networkRef:
+      name: sooraj-demo-vpc
