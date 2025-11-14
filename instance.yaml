@@ -9,6 +9,9 @@ spec:
   forProvider:
     machineType: e2-micro
     zone: us-central1-a
+
+    deletionProtection: false   # ← REQUIRED
+
     bootDisk:
       - initializeParams:
           image: debian-cloud/debian-12
